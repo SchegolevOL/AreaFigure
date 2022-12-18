@@ -16,6 +16,7 @@ switch (select)
         var sideB = Convert.ToDouble(Console.ReadLine());
         Console.Write("Введите размер стороны C: ");
         var sideC = Convert.ToDouble(Console.ReadLine());
+
         figure = new Triangle(sideA, sideB, sideC);
         break;
     case "2":
