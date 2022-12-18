@@ -1,6 +1,7 @@
-﻿using AreaFigure.Lib;
+﻿using System.ComponentModel;
+using AreaFigure.Lib;
 
-IFigure? _figure;
+Figure? figure;
 
 Console.WriteLine("Выберите тип фигуры");
 Console.WriteLine("1. Триугольник");
@@ -15,22 +16,36 @@ switch (select)
         var sideB = Convert.ToDouble(Console.ReadLine());
         Console.Write("Введите размер стороны C: ");
         var sideC = Convert.ToDouble(Console.ReadLine());
-        _figure = new Triangle(sideA, sideB, sideC);
+        figure = new Triangle(sideA, sideB, sideC);
         break;
     case "2":
         Console.Write("Введите радиус круга: ");
         var radius = Convert.ToDouble(Console.ReadLine());
-        _figure = new Circle(radius);
+        figure = new Circle(radius);
         break;
     default:
-        _figure = null;
+        figure = null;
         break;
 }
 
-Print(_figure);
-
-
-void Print(IFigure? figure)
+if (figure is not null)
 {
-    Console.WriteLine($"Площадь = {figure?.Area()}");
+    if (figure is IArea a)
+    {
+        Console.WriteLine($"Area = {a.Area()}");
+    }
+
+    if (figure is IСheckSquare c)
+    {
+        if (c.СheckSquare())
+        {
+            Console.WriteLine("Треугольник прямоугольный");
+        }
+        else
+        {
+            Console.WriteLine("Треугольник не прямоугольный");
+        }
+    }
+    
 }
+

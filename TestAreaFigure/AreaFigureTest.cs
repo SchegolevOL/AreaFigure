@@ -46,7 +46,7 @@ namespace TestAreaFigure
             double c = 8.06225774829855;
             bool expected = true;
             var triangl = new Triangle(a, b, c);
-            var actual = triangl.CompareRightTriangle();
+            var actual = triangl.ÑheckSquare();
             Assert.Equal(expected, actual);
         }
         [Fact]
@@ -57,7 +57,7 @@ namespace TestAreaFigure
             double c = 7;
             bool expected = false;
             var triangl = new Triangle(a, b, c);
-            var actual = triangl.CompareRightTriangle();
+            var actual = triangl.ÑheckSquare();
             Assert.Equal(expected, actual);
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace AreaFigure.Lib
 {
-    public interface IFigure
+    public interface IArea
     {
         public double Area();
     }

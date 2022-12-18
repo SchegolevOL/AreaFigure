@@ -1,6 +1,6 @@
 ﻿namespace AreaFigure.Lib
 {
-    public class Triangle : IFigure
+    public class Triangle : Figure, IArea, IСheckSquare
     {
         private readonly double _sideA;
         private readonly double _sideB;
@@ -31,7 +31,7 @@
             return Math.Sqrt(p * (p - _sideA) * (p - _sideB) * (p - _sideC));
         }
 
-        public bool CompareRightTriangle()
+        public bool СheckSquare()
         {
             
             if (Math.Abs(Math.Pow(_sideC, 2) - (Math.Pow(_sideB, 2) + Math.Pow(_sideA, 2))) < 0.001)

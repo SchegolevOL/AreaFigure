@@ -1,6 +1,6 @@
 ﻿namespace AreaFigure.Lib
 {
-    public class Circle : IFigure
+    public class Circle : Figure, IArea
     {
         private readonly double _radius;
         
