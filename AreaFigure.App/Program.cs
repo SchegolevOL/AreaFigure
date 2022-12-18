@@ -38,14 +38,7 @@ if (figure is not null)
 
     if (figure is IСheckSquare c)
     {
-        if (c.СheckSquare())
-        {
-            Console.WriteLine("Треугольник прямоугольный");
-        }
-        else
-        {
-            Console.WriteLine("Треугольник не прямоугольный");
-        }
+        Console.WriteLine(c.СheckSquare() ? "Треугольник прямоугольный" : "Треугольник не прямоугольный");
     }
     
 }
