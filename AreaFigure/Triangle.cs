@@ -8,11 +8,13 @@
 
         public Triangle(double sideA, double sideB, double sideC)
         {
-            if (CheckTriangle(sideA, sideB, sideC))
+            var arrSide = new[] { sideA, sideB, sideC };
+            Array.Sort(arrSide);
+            if (CheckTriangle(arrSide))
             {
-                _sideA = sideA;
-                _sideB = sideB;
-                _sideC = sideC;
+                _sideA = arrSide[0];
+                _sideB = arrSide[1];
+                _sideC = arrSide[2];
             }
             else
             {
@@ -23,10 +25,9 @@
 
         }
 
-        public static bool CheckTriangle(double sideA, double sideB, double sideC)
+        public static bool CheckTriangle(double[] arrSide)
         {
-            var arrSide = new[] { sideA, sideB, sideC };
-            Array.Sort(arrSide);
+            
             if (arrSide[0] <= arrSide[1] + arrSide[2] && arrSide[0] > 0 && arrSide[1] > 0 && arrSide[2] > 0)
             {
                 return true;

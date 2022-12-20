@@ -39,6 +39,18 @@ namespace TestAreaFigure
         }
 
         [Fact]
+        public void TestTriangleArea_SideA_8_SideB_5_SideC_4()
+        {
+            double a = 8;
+            double b = 5;
+            double c = 4;
+            double expected = 8.182;
+            var triangl = new Triangle(a, b, c);
+            var actual = triangl.Area();
+            Assert.Equal(Math.Round(expected * 1000), Math.Round(actual * 1000));
+        }
+
+        [Fact]
         public void TestTriangleCompareRightTriangle_True()
         {
             double a = 7;
